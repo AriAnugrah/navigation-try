@@ -17,11 +17,6 @@ class AddItemFragment : Fragment(), View.OnClickListener {
 
     private lateinit var navController : NavController
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,8 +27,10 @@ class AddItemFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
+        navController = findNavController(view)
         btnList.setOnClickListener(this)
+        btn_to_history.setOnClickListener(this)
+        btn_to_other.setOnClickListener(this)
     }
 
     companion object {
@@ -45,7 +42,8 @@ class AddItemFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v){
             btnList -> navController.navigate(R.id.action_addItemFragment_to_listItemFragment)
-
+            btn_to_history -> navController.navigate(R.id.action_addItemFragment_to_historyFragment2)
+            btn_to_other -> navController.navigate((R.id.action_addItemFragment_to_otherFragment))
         }
     }
 }
