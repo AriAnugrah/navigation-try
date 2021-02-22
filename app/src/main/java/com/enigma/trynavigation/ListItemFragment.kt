@@ -11,9 +11,8 @@ import kotlinx.android.synthetic.main.fragment_add_item.*
 import kotlinx.android.synthetic.main.fragment_list_item.*
 
 
-class ListItemFragment : Fragment(), View.OnClickListener {
+class ListItemFragment : Fragment() {
 
-    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,19 +28,11 @@ class ListItemFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
-        btnAdd.setOnClickListener(this)
     }
 
     companion object {
 
         @JvmStatic
         fun newInstance() = ListItemFragment()
-    }
-
-    override fun onClick(v: View?) {
-        when(v){
-            btnAdd -> navController.navigate(R.id.action_listItemFragment_to_addItemFragment)
-        }
     }
 }

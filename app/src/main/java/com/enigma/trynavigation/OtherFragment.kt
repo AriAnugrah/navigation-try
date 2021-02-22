@@ -42,8 +42,8 @@ class OtherFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v){
-            btnBack_to_add_item -> navController.navigate(R.id.action_otherFragment_to_addItemFragment)
-        }
+//        when(v){
+//            btnBack_to_add_item -> navController.navigate(R.id.action_otherFragment_to_addItemFragment)
+//        }
     }
 }
